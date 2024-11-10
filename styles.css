@@ -1,0 +1,55 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+#gameContainer{
+    display: inline-grid;
+    gap: 10px 10px;
+    position: relative;
+    width: 620px;
+    height: 620px;
+}
+#board {
+    z-index: 2;
+}
+#gameContainer, #board {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.2;
+}
+.cell {
+    z-index: 3;
+}
+#joining, #endgame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    text-align: center;
+}
+#endgame {
+    display: none;
+    font-size: 0px;
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-delay: 0.1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+@keyframes appear {
+    100% {
+        font-size: 50px;
+    }
+}
+h1 {
+    text-align: center;
+    display: none;
+    font-size: 40px;
+}
+#playerNumber {
+    margin: 10px;
+}
+
