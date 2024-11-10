@@ -38,6 +38,9 @@ client.on('playTurn', (game) => {
         turn = !turn;
         drawWinLine(iswner[0], iswner[1]);
     }
+    else if(is_tie()){
+        final();
+    }
     else{
         board.addEventListener("click", play);
     }
@@ -152,16 +155,23 @@ function drawWinLine(start, end){
     
     canvas.stroke();
     
+    final();
+}
+
+function final(){
     let endgame = document.getElementById("endgame");
     
-    if(!turn){
+    if(is_tie()){
+        endgame.textContent = "Tie!";
+    }
+    else if(!turn){
         endgame.textContent = "Player 2 Wins!";
     }
     
     gameContainer.style.opacity = "0.2";
     board.style.opacity = "0.2";
     endgame.style.display = "block";
-    
+
     setTimeout(() => {
         window.location.reload();
     }, 1800);

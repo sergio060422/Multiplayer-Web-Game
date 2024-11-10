@@ -42,15 +42,8 @@ server.on('connection', (socket) => {
                 
    })
    socket.on('disconnect', () => {
-       console.log(players); 
        delete players[socket.id];
-       console.log(players);
    })
 });
-
-server.on('disconnect', (socket) => {
-    console.log(players);
-    console.log(socket.id);
-})
 
 httpServer.listen(port);

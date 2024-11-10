@@ -48,10 +48,22 @@ function play(event){
     if(iswnr[0] != undefined){
         drawWinLine(iswnr[0], iswnr[1]);
     }
+    else if(is_tie()){
+        final();
+    }
 }
 
 function to_id(i, j){
     return (i - 1) * 3 + j - 1;
+}
+
+function is_tie(){
+    for(let i = 0; i < 9; i++){
+        if(mark[i] == undefined){
+            return 0;
+        }
+    }
+    return 1;
 }
 
 function is_winner(){
