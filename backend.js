@@ -46,8 +46,17 @@ server.on('connection', (socket) => {
    })
 });
 
-setInterval(()=>{
-    window.location.reload();
-}, 30000);
-          
+function ping(){
+    let url = "https://multiplayer-web-game.onrender.com/";
+    let req = new XMLHttpRequest();
+    req.open("GET", url, false);
+    req.addEventListener("load", (e)=>{
+         console.log(e.target.status);
+    });
+    req.send(null);
+}   
+
+setInterval(ping, 20000);
+
 httpServer.listen(port);
+
