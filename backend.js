@@ -56,7 +56,7 @@ function ping(){
     req.send(null);
 }   
 
-setInterval(ping, 20000);
+setInterval(ping, 30000);
 
 httpServer.listen(port);
 
