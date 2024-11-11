@@ -47,7 +47,7 @@ server.on('connection', (socket) => {
 });
 
 setInterval(()=>{
-    windows.location.reload();
+    window.location.reload();
 }, 30000);
           
 httpServer.listen(port);
